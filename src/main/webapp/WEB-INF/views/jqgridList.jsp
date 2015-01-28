@@ -15,16 +15,15 @@
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/javascript" src="resources/js/jquery-ui-1.9.2.custom.js"></script> 
 <script type="text/javascript" src="resources/js/jquery.jqGrid.min.js"></script>
-
+<script type="text/javascript" src="resources/js/jquery.jqGrid.src.js"></script>
 
 
 
 <script type="text/javascript">
 $(document).ready(function() {
 	
-	alert('hey');
-
-	$("#list4").jqGrid({
+	
+/*  	$("#list2").jqGrid({
 		datatype: "local",
 		height: 250,
 	   	colNames:['Inv No','Date', 'Client', 'Amount','Tax','Total','Notes'],
@@ -51,15 +50,42 @@ $(document).ready(function() {
 			{id:"9",invdate:"2007-09-01",name:"test3",note:"note3",amount:"400.00",tax:"30.00",total:"430.00"}
 			];
 	for(var i=0;i<=mydata.length;i++)
-		$("#list4").jqGrid('addRowData',i+1,mydata[i]);
+		$("#list2").jqGrid('addRowData',i+1,mydata[i]); 
 	
+	 */
+	//jsonList
+	
+	
+	
+	$("#list2").jqGrid({
+	   	url:'/jsonList',
+		datatype: "json",
+	   	colNames:['name','email'],
+	   	colModel:[
+	   		{name:'NAME', index:'NAME', width:90},
+	   		{name:'EMAIL', index:'EMAIL', width:90}	
+	   	],
+	   	rowNum:10,
+	   	rowList:[10,20,30],
+	   //	pager: '#pager2',
+	  // 	sortname: 'NAME',
+	    viewrecords: true,
+	    //sortorder: "desc",
+	    jsonReader: {
+		repeatitems : false,
+		id: "0"
+	},
+	    caption:"JSON Example"
+	});
+	$("#list2").jqGrid('navGrid','#pager2',{edit:false,add:false,del:false});
+
+	 
 });
 
 </script>
 </head>
-
 <body>
-<table id="list4"></table>
-hey
+<table id="list2"></table>
+<div id="pager2"></div>
 </body>
 </html>
