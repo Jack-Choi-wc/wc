@@ -76,8 +76,8 @@ public class HomeController {
 		JsonObj rtnJson = new JsonObj();
 		
 		rtnJson.setRows(userList);
-		rtnJson.setPage(1);
-		rtnJson.setRecords(2);
+		rtnJson.setPage(0);
+		rtnJson.setRecords(5);
 		rtnJson.setTotal(2);
 		
 		model.addAttribute(rtnJson);

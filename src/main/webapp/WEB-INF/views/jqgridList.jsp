@@ -16,7 +16,7 @@
 <script type="text/javascript" src="resources/js/jquery-ui-1.9.2.custom.js"></script> 
 <script type="text/javascript" src="resources/js/jquery.jqGrid.min.js"></script>
 <script type="text/javascript" src="resources/js/jquery.jqGrid.src.js"></script>
-
+<script type="text/javascript" src="resources/js/i18n/grid.locale-en.js"></script>
 
 
 <script type="text/javascript">
@@ -62,15 +62,15 @@ $(document).ready(function() {
 		datatype: "json",
 	   	colNames:['name','email'],
 	   	colModel:[
-	   		{name:'NAME', index:'NAME', width:90},
-	   		{name:'EMAIL', index:'EMAIL', width:90}	
+	   		{name:'NAME', index:'NAME', width:200},
+	   		{name:'EMAIL', index:'EMAIL', width:400}	
 	   	],
 	   	rowNum:10,
-	   	rowList:[10,20,30],
-	   //	pager: '#pager2',
-	  // 	sortname: 'NAME',
+	   	rowList:[1,5,10],
+	   	pager: '#pager2',
+	   	sortname: 'NAME',
 	    viewrecords: true,
-	    //sortorder: "desc",
+	    sortorder: "desc",
 	    jsonReader: {
 		repeatitems : false,
 		id: "0"
